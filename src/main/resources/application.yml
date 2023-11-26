@@ -6,3 +6,8 @@ spring:
 
 server:
   port: 8886
+
+gym:
+  service:
+    baseUrl: 'http://localhost:8585/api/training-session'
+    searchSession: '/search'
