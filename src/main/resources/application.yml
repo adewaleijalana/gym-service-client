@@ -9,5 +9,5 @@ server:
 
 gym:
   service:
-    baseUrl: 'http://localhost:8585/api/training-session'
+    baseUrl: 'localhost:8585/api/training-session'
     searchSession: '/search'

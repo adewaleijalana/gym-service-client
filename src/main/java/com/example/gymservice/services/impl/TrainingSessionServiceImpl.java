@@ -45,11 +45,15 @@ public class TrainingSessionServiceImpl implements TrainingSessionService {
     @Override
     public List<SessionSearchResponse> getTrainingSessions(SessionQuery sessionQuery) {
         String fullSearchEndpoint = baseUrl + searchEndpoint;
+        log.info("fullSearchEndpoint: {}", fullSearchEndpoint);
 
         return webClient
-                .method(HttpMethod.GET)
-                .uri(fullSearchEndpoint)
-                .body(Mono.just(sessionQuery), SessionQuery.class)
+                .get()
+                .uri(uriBuilder -> uriBuilder
+                        .path(fullSearchEndpoint)
+                        .queryParam("coachName", sessionQuery.getCoachName())
+                        .queryParam("values", sessionQuery.getWeekDays())
+                        .build())
                 .retrieve()
                 .bodyToMono(TrainingSessions.class)
                 .map(this::buildSearchResponse)
