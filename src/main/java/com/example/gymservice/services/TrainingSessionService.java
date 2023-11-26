@@ -1,6 +1,9 @@
 package com.example.gymservice.services;
 
 import com.example.gymservice.model.requests.SessionQuery;
+import com.example.gymservice.model.response.SessionSearchResponse;
+
+import java.util.List;
 
 /**
  * @author: adewaleijalana
@@ -10,5 +13,5 @@ import com.example.gymservice.model.requests.SessionQuery;
 
 
 public interface TrainingSessionService {
-    void getTrainingSessions(SessionQuery sessionQuery);
+    List<SessionSearchResponse> getTrainingSessions(SessionQuery sessionQuery);
 }

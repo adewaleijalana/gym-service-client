@@ -23,4 +23,14 @@ public class SessionSearchResponse implements Serializable {
     private String weekDay;
     private String coachName;
     private String memberNames;
+
+    @Override
+    public String toString() {
+        return "SessionSearchResponse{" +
+                "gymName='" + gymName + '\'' +
+                ", weekDay='" + weekDay + '\'' +
+                ", coachName='" + coachName + '\'' +
+                ", memberNames='" + memberNames + '\'' +
+                '}';
+    }
 }
