@@ -25,13 +25,8 @@ public class TrainingSessionsController {
     private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
     private final TrainingSessionService trainingSessionService;
 
-    @GetMapping("/sessions")
-    public String showSession(Model model) {
-        return "sessions";
-    }
-
-    @PostMapping("/searchSession")
-    public String searchSession(SessionQuery sessionQuery, Model model) {
+    @PostMapping("/sessions")
+    public String showSession(SessionQuery sessionQuery, Model model) {
         log.info("sessionQuery in searchSession: {}", gson.toJson(sessionQuery));
         trainingSessionService.getTrainingSessions(sessionQuery);
         return "sessions";
@@ -40,6 +35,6 @@ public class TrainingSessionsController {
     @GetMapping("/search")
     public String search(SessionQuery sessionQuery) {
         log.info("sessionQuery in search: {}", gson.toJson(sessionQuery));
-        return "search-coach";
+        return "search-session";
     }
 }
