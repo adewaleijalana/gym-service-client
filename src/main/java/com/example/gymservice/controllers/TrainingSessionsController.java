@@ -32,7 +32,7 @@ public class TrainingSessionsController {
         return "sessions";
     }
 
-    @GetMapping("/search")
+    @GetMapping("/")
     public String search(SessionQuery sessionQuery) {
         log.info("sessionQuery in search: {}", gson.toJson(sessionQuery));
         return "search-session";
