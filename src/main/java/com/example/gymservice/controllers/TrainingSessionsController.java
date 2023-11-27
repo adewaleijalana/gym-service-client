@@ -36,7 +36,7 @@ public class TrainingSessionsController {
         return "sessions";
     }
 
-    @GetMapping("/")
+    @GetMapping({"/", ""})
     public String search(SessionQuery sessionQuery) {
         log.info("sessionQuery in search: {}", gson.toJson(sessionQuery));
         return "search-session";

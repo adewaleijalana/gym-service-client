@@ -3,9 +3,18 @@ spring:
     active: local
   application:
     name: gym-service-client
+  mvc:
+    servlet:
+      path: /
 
 server:
   port: 8886
+  servlet:
+    context-path: /
+  error:
+    path: /error
+    whitelabel:
+      enabled: false
 
 gym:
   service:
