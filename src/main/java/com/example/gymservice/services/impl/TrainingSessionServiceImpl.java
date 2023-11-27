@@ -52,7 +52,7 @@ public class TrainingSessionServiceImpl implements TrainingSessionService {
                 .uri(uriBuilder -> uriBuilder
                         .path(fullSearchEndpoint)
                         .queryParam("coachName", sessionQuery.getCoachName())
-                        .queryParam("values", sessionQuery.getWeekDays())
+                        .queryParam("weekDays", sessionQuery.getWeekDays())
                         .build())
                 .retrieve()
                 .bodyToMono(TrainingSessions.class)
